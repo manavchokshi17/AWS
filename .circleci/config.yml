@@ -12,11 +12,13 @@ jobs:
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400"
-          from: bucket
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: https://github.com/manavchokshi17/AWS.git
           to: 's3://deployaws17'
       - aws-s3/copy:
           arguments: '--dryrun'
-          from: bucket/build_asset.txt
+          from: https://github.com/manavchokshi17/AWS.git
           to: 's3://deployaws17'
 workflows:
   s3-example:
