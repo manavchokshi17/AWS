@@ -18,7 +18,7 @@ jobs:
           to: 's3://deployaws17'
       - aws-s3/copy:
           arguments: '--dryrun'
-          from: bucket/build_asset.txt
+          from: build
           to: 's3://deployaws17'
 workflows:
   s3-example:
